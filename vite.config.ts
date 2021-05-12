@@ -12,7 +12,7 @@ export default defineConfig(({ command }) => ({
         manifest: true,
         outDir: 'public/dist',
         rollupOptions: {
-            input: 'resources/ts/app.ts'
+            input: 'resources/ts/app.tsx'
         }
     }
 }))
