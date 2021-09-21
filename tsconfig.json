@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "baseUrl": "resources/js",
         "target": "ESNext",
         "lib": [
             "DOM",
@@ -7,7 +8,8 @@
             "ESNext"
         ],
         "types": [
-            "vite/client"
+            "vite/client",
+            "vite-plugin-svgr/client",
         ],
         "allowJs": false,
         "skipLibCheck": false,
@@ -23,6 +25,6 @@
         "jsx": "react"
     },
     "include": [
-        "./resources/ts"
+        "resources/js"
     ]
 }

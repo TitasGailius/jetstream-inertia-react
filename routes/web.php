@@ -22,6 +22,19 @@ Route::get('/', function () {
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
+})->name('home');
+
+Route::get('/sandbox', function () {
+    return Inertia::render('Sandbox');
+});
+
+Route::post('/sandbox', function () {
+    request()->validate([
+        'first_name' => ['required', 'string', 'min:8'],
+        'last_name' => ['required', 'string', 'min:5'],
+    ]);
+
+    return back()->with('status', 'Sandbox request received.');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
