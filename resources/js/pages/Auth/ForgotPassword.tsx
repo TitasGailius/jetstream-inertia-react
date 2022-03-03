@@ -2,15 +2,17 @@ import React from "react"
 import route from "ziggy-js"
 import { useForm } from "@inertiajs/inertia-react"
 
+import { Page } from "types/App"
 import Button from "jetstream/Button"
 import FormInput from "jetstream/FormInput"
-import AuthenticationCard from "components/AuthenticationCard"
+import AuthenticationCard from "jetstream/AuthenticationCard"
+import AuthenticationCardLogo from "jetstream/AuthenticationCardLogo"
 
 interface Props {
     status?: string
 }
 
-const ForgotPassword: React.FC<Props> = ({ status }) => {
+const ForgotPassword: Page<Props> = ({ status }) => {
     const { data, setData, post, errors, processing } = useForm({
         email: '',
     })
@@ -21,7 +23,7 @@ const ForgotPassword: React.FC<Props> = ({ status }) => {
     }
 
     return (
-        <AuthenticationCard>
+        <AuthenticationCard logo={AuthenticationCardLogo}>
             <div className="mb-4 text-sm text-gray-500 leading-normal">
                 Forgot your password? No problem. Just let us know your email address and we will email you a password
                 reset link that will allow you to choose a new one.

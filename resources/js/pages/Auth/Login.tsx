@@ -2,16 +2,18 @@ import React from "react"
 import route from "ziggy-js"
 import { InertiaLink, useForm } from "@inertiajs/inertia-react"
 
+import { Page } from "types/App"
 import Button from "jetstream/Button"
 import Checkbox from "jetstream/Checkbox"
 import FormInput from "jetstream/FormInput"
-import AuthenticationCard from "components/AuthenticationCard"
+import AuthenticationCard from "jetstream/AuthenticationCard"
+import AuthenticationCardLogo from "jetstream/AuthenticationCardLogo"
 
 interface Props {
     status?: string
 }
 
-const Login: React.FC<Props> = ({ status }) => {
+const Login: Page<Props> = ({ status }) => {
     const { data, setData, post, processing, errors } = useForm({
         email: '',
         password: '',
@@ -24,7 +26,7 @@ const Login: React.FC<Props> = ({ status }) => {
     }
 
     return (
-        <AuthenticationCard>
+        <AuthenticationCard logo={AuthenticationCardLogo}>
             {status && (
                 <div className="mb-4 font-medium text-sm text-green-600">{status}</div>
             )}

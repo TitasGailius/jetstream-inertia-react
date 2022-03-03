@@ -2,16 +2,18 @@ import React from "react"
 import route from "ziggy-js"
 import { useForm } from "@inertiajs/inertia-react"
 
+import { Page } from "types/App"
 import Button from "jetstream/Button"
 import FormInput from "jetstream/FormInput"
-import AuthenticationCard from "components/AuthenticationCard"
+import AuthenticationCard from "jetstream/AuthenticationCard"
+import AuthenticationCardLogo from "jetstream/AuthenticationCardLogo"
 
 interface Props {
     email: string
     token: string
 }
 
-const ResetPassword: React.FC<Props> = ({ email, token }) => {
+const ResetPassword: Page<Props> = ({ email, token }) => {
     const { data, setData, post, processing, errors } = useForm({
         token,
         email: email,
@@ -25,7 +27,7 @@ const ResetPassword: React.FC<Props> = ({ email, token }) => {
     }
 
     return (
-        <AuthenticationCard>
+        <AuthenticationCard logo={AuthenticationCardLogo}>
             <form onSubmit={submit}>
                 <FormInput
                     type="email"

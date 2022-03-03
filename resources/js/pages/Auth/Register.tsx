@@ -2,11 +2,12 @@ import React from "react"
 import route from "ziggy-js"
 import { InertiaLink, useForm } from "@inertiajs/inertia-react"
 
+import { Page } from "types/App"
 import Button from "jetstream/Button"
 import FormInput from "jetstream/FormInput"
-import AuthenticationCard from "components/AuthenticationCard"
+import AuthenticationCard from "jetstream/AuthenticationCard"
 
-const Register: React.FC = () => {
+const Register: Page = () => {
     const { data, setData, post, errors, processing } = useForm({
         name: '',
         email: '',

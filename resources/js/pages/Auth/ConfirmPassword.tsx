@@ -3,6 +3,7 @@ import { useForm } from "@inertiajs/inertia-react"
 import route from "ziggy-js"
 import { Head } from "@inertiajs/inertia-react"
 
+import { Page } from "types/App"
 import Label from "jetstream/Label"
 import Input from "jetstream/Input"
 import Button from "jetstream/Button"
@@ -10,7 +11,7 @@ import ValidationErrors from "jetstream/ValidationErrors"
 import AuthenticationCard from "jetstream/AuthenticationCard"
 import AuthenticationCardLogo from "jetstream/AuthenticationCardLogo"
 
-const ConfirmPassword: React.FC = () => {
+const ConfirmPassword: Page = () => {
     const form = useForm({
         password: '',
     })

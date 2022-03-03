@@ -2,6 +2,7 @@ import React from "react"
 import route from "ziggy-js"
 import { Link, useForm } from "@inertiajs/inertia-react"
 
+import { Page } from "types/App"
 import Button from "jetstream/Button"
 import AuthenticationCard from "jetstream/AuthenticationCard"
 import AuthenticationCardLogo from "jetstream/AuthenticationCardLogo"
@@ -10,7 +11,7 @@ interface Props {
     status: string
 }
 
-const VerifyEmail: React.FC<Props> = ({ status }) => {
+const VerifyEmail: Page<Props> = ({ status }) => {
     const form = useForm({})
 
     const submit = (e: React.FormEvent<HTMLFormElement>) => {
